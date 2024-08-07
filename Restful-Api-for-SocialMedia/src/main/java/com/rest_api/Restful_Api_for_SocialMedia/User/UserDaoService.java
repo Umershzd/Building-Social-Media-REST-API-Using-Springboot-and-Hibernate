@@ -30,4 +30,12 @@ public class UserDaoService {
                         .orElseThrow(() -> new RuntimeException("User with ID " + id + " not found"));
 
     }
+    public User saveUser(User user) {
+        user.setId(++count);
+        users.add(user);
+        return user;
+    }
+    public User deleteUser(int id) {
+        return users.remove(id);
+    }
 }

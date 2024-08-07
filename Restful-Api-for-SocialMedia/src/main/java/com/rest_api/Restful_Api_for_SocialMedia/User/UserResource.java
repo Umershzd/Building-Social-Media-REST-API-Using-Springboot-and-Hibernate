@@ -1,8 +1,7 @@
 package com.rest_api.Restful_Api_for_SocialMedia.User;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 //creating the REST Controller to call the REST API methods
 @RestController
@@ -20,5 +19,15 @@ private UserDaoService service;
     public User retrieveOneUser(@PathVariable int id)
     {
         return service.findOneUser(id);
+    }
+    @PostMapping("/users")
+    public void createUser(@RequestBody User user)
+    {
+        service.saveUser(user);
+    }
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id)
+    {
+        service.deleteUser(id);
     }
 }
