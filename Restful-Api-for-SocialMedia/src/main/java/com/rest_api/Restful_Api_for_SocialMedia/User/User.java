@@ -1,7 +1,7 @@
 package com.rest_api.Restful_Api_for_SocialMedia.User;
 
 import java.time.LocalDate;
-
+//Creating the Beans for Users
 public class User {
     private int id;
     private String name;

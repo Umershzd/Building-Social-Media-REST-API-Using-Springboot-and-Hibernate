@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-
+// creating the Data Access Object servcie for User class to perform CRUD Operation.
 @Component
 public class UserDaoService {
     static int count=0;
