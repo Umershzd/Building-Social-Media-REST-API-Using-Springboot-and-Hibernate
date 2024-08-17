@@ -1,7 +1,10 @@
 package com.rest_api.Restful_Api_for_SocialMedia.User;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 //creating the REST Controller to call the REST API methods
 @RestController
@@ -21,9 +24,12 @@ private UserDaoService service;
         return service.findOneUser(id);
     }
     @PostMapping("/users")
-    public void createUser(@RequestBody User user)
+    public ResponseEntity<User> createUser(@RequestBody User user)
     {
-        service.saveUser(user);
+        User savedUser=service.saveUser(user);
+        URI location= ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}").buildAndExpand(savedUser.getId()).toUri();
+        return ResponseEntity.created(location).build();
     }
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable int id)
