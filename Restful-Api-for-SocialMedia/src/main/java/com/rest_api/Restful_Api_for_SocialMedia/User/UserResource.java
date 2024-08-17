@@ -21,7 +21,10 @@ private UserDaoService service;
     @GetMapping("/users/{id}")
     public User retrieveOneUser(@PathVariable int id)
     {
-        return service.findOneUser(id);
+        User user= service.findOneUser(id);
+   if (user==null)
+       throw new UserNotFoundException("id: "+id);
+   return user;
     }
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@RequestBody User user)
