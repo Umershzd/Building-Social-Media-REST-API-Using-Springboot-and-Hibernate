@@ -37,6 +37,6 @@ private UserDaoService service;
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable int id)
     {
-        service.deleteUser(id);
+        service.deleteById(id);
     }
 }
