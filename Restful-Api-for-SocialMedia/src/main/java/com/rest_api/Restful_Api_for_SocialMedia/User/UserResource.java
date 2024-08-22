@@ -1,5 +1,6 @@
 package com.rest_api.Restful_Api_for_SocialMedia.User;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -27,7 +28,7 @@ private UserDaoService service;
    return user;
     }
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user)
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user)
     {
         User savedUser=service.saveUser(user);
         URI location= ServletUriComponentsBuilder.fromCurrentRequest()

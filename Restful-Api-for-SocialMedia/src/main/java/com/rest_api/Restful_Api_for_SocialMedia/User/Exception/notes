@@ -1,0 +1,5 @@
+{
+    "timestamp": "2024-08-22T09:53:55.7142093",
+    "message": "Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.rest_api.Restful_Api_for_SocialMedia.User.User> com.rest_api.Restful_Api_for_SocialMedia.User.UserResource.createUser(com.rest_api.Restful_Api_for_SocialMedia.User.User) with 2 errors: [Field error in object 'user' on field 'name': rejected value []; codes [Size.user.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.name,name]; arguments []; default message [name],2147483647,2]; default message [Name should have atleast 2 characters]] [Field error in object 'user' on field 'birthDate': rejected value [2029-08-07]; codes [Past.user.birthDate,Past.birthDate,Past.java.time.LocalDate,Past]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.birthDate,birthDate]; arguments []; default message [birthDate]]; default message [Birth Date should be in the past]] ",
+    "details": "uri=/users"
+}
